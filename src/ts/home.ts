@@ -115,8 +115,8 @@ function attachProductCardEvents(
     }
 
     if (target.closest("button")) {
-      const action = target.closest<HTMLElement>("button")?.dataset
-        .buttonAction;
+      const action =
+        target.closest<HTMLElement>("button")?.dataset.buttonAction;
 
       if (action === "view-product") {
         navigateToProduct(product.id);

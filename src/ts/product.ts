@@ -169,7 +169,9 @@ function createProductVariants(product: Product): ProductVariant[] {
   const categories = getOptionValues(product.category);
 
   return sizes.reduce<ProductVariant[]>((variants, size) => {
-    return variants.concat(createSizeVariants(product, size, colors, categories));
+    return variants.concat(
+      createSizeVariants(product, size, colors, categories),
+    );
   }, []);
 }
 

@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Dummy build script required for Autocode Compile\"",
-    "ts-compile": "npx tsc"
-
+    "ts-compile": "tsc",
+    "sass-compile": "sass src/scss/main.scss dist/css/main.css",
+    "sass-watch": "sass --watch src/scss/main.scss:dist/css/main.css",
+    "build": "npm run ts-compile && npm run sass-compile",
+    "dev": "npm run build && live-server . --port=3002 --no-browser",
+    "lint:ts": "eslint \"src/ts/**/*.ts\"",
+    "lint:scss": "stylelint \"src/scss/**/*.scss\"",
+    "lint": "npm run lint:ts && npm run lint:scss"
   },
   "repository": {
     "type": "git",
@@ -18,6 +23,13 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^8.57.1",
+    "live-server": "^1.2.2",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.93.2",
+    "stylelint": "^16.21.1",
     "typescript": "^6.0.2"
   }
 }

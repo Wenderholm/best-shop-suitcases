@@ -1,0 +1,243 @@
+.footer {
+  &__benefits-inner {
+    padding: 37px 200px 40px;
+    box-sizing: border-box;
+  }
+
+  &__box {
+    margin-bottom: 26px;
+
+    h3 {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 700;
+      text-align: left;
+    }
+  }
+
+  &__benefits-wrap {
+    width: 1700px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #4b4b4b;
+    background-image: url("../../src/img/vector lines.png");
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center;
+  }
+
+  &__benefits {
+    min-height: 106px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 91px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  &__benefit-item {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    p {
+      margin-left: 20px;
+      font-size: 15px;
+      line-height: 1.5;
+      text-align: left;
+      color: #fff;
+    }
+  }
+
+  &__content {
+    padding-top: 120px;
+    padding-bottom: 43px;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(320px, 420px);
+    gap: 48px;
+    align-items: start;
+  }
+
+  &__column--info {
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+  }
+
+  &__columns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  &__column {
+    h4 {
+      margin: 0 0 24px;
+      font-size: 15px;
+      font-weight: 700;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin: 0;
+      color: #3b3b3b;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+  }
+
+  &__column--contact {
+    max-width: 420px;
+
+    .footer__contact-grid {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 24px;
+    }
+  }
+
+  &__shipping {
+    text-align: left;
+    margin-top: 42px;
+
+    h4 {
+      margin-bottom: 24px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #171717;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0;
+      color: #3b3b3b;
+      font-size: 14px;
+    }
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      margin-top: 2px;
+    }
+
+    span {
+      color: #000;
+      font-size: 15px;
+    }
+  }
+
+  &__copyright {
+    margin: 110px 0 0;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media (max-width: $desktop-wide) {
+  .footer {
+    &__benefits-inner {
+      padding: 22px 18px;
+    }
+
+    &__main {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    &__benefits {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    &__columns {
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 28px;
+    }
+
+    &__column--contact {
+      max-width: 100%;
+
+      .footer__contact-grid {
+        margin-top: 28px;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .footer {
+    &__content {
+      padding-top: 72px;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    &__columns {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    &__column--contact {
+      max-width: 100%;
+
+      .footer__contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__shipping {
+      margin-top: 28px;
+    }
+
+    &__benefit-item {
+      align-items: flex-start;
+    }
+
+    &__copyright {
+      margin-top: 50px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/reset";
+@import "base/fonts";
+
+@import "components/buttons";
+@import "components/forms";
+@import "components/product-card";
+
+@import "layouts/header";
+@import "layouts/footer";
+
+@import "pages/home";
+@import "pages/catalog";
+@import "pages/about";
+@import "pages/contact";
+@import "pages/cart";
+@import "pages/product-details";

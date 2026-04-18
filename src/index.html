@@ -1,1 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Best Shop</title>
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
 
+  <body>
+    <header class="header">
+      <div class="containerUpper">
+        <div class="socialMedia">
+          <a href="https://www.facebook.com/"
+            ><img src="../src/img/facebook.png" alt="Facebook"
+          /></a>
+          <a href="https://www.twitter.com/"
+            ><img src="../src/img/twitter.png" alt="Twitter"
+          /></a>
+          <a href="https://www.instagram.com/"
+            ><img src="../src/img/instagram.png" alt="Instagram"
+          /></a>
+        </div>
+        <a class="logo" href="index.html" aria-label="Go to homepage">
+          <img src="../src/img/waliza.png" alt="Best Shop" />
+          <p>Best Shop</p>
+        </a>
+        <div class="loginIcon">
+          <a class="userIcon" href="login.html"
+            ><img src="../src/img/user.png" alt="Login"
+          /></a>
+          <a class="cartIcon" href="html/cart.html"
+            ><img src="../src/img/shoppin-card.png" alt="Cart"
+          /></a>
+        </div>
+        <button
+          class="header__menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="containerDown">
+        <nav class="nav" id="site-nav">
+          <a class="is-active" href="index.html">Home</a>
+          <a href="html/catalog.html">Catalog</a>
+          <a href="html/about.html">About Us</a>
+          <a href="html/contact.html">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero__wrapper">
+          <div class="hero__text">
+            <h1>Smart Styles for Every Destination</h1>
+            <p>
+              Phasellus risus turpis, pretium sit amet magna non, molestie
+              ultricies enim.
+            </p>
+            <button class="btn">View All Items</button>
+          </div>
+          <div class="imgWrapper">
+            <img src="../src/img/walizka.png" alt="Suitcase" />
+          </div>
+        </div>
+      </section>
+      <!-- discount -->
+      <section class="discount">
+        <div class="container discount__wrapper">
+          <div class="infoContainer">
+            <div class="infoPerson">
+              <div class="photo">
+                <img src="../src/img/personPhoto.png" alt="Person" />
+              </div>
+              <div class="photoDesc">
+                <h3>Lillian Bennett</h3>
+                <p>Chief Marketing Officer</p>
+              </div>
+            </div>
+            <div class="infoDesc">
+              <h1>Aliquam Faucibus Odionecom.</h1>
+              <p>
+                Duis vestibulum elit vel neque pharetra vulputate. Quisque
+                scelerisque nisi urna. Duis rutrum non risus in imperdiet. Proin
+                molestie accumsan nulla sit.
+              </p>
+              <p>
+                Namaki duis vestibulum elit vel neque pharetra vulputate.
+                Quisque scelerisque nisi urna.
+              </p>
+            </div>
+          </div>
+          <div class="imgDiscContainer">
+            <h2>25 % discount</h2>
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              imperdiet et leo in vulputate.
+            </p>
+            <div>
+              <button class="btn">Get Discount</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- TRAVEL -->
+      <section class="section container travel">
+        <h2>Travel suitcases</h2>
+        <p class="travel__subtitle">Duis vestibulum elit vel neque pharetra</p>
+
+        <div class="travel-slider" aria-label="Travel suitcases slider">
+          <div class="travel-slider__viewport" id="travel-slider"></div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="section container selected-products">
+        <h2>Selected Products</h2>
+        <p class="selected-products__subtitle">
+          Duis vestibulum elit vel neque pharetra
+        </p>
+
+        <div class="products" id="products"></div>
+      </section>
+
+      <section class="section promo-offer">
+        <div class="promo-offer__wrapper">
+          <div class="promo-offer__left">
+            <h2>50%</h2>
+            <p>Curabitur vulputate arcu odio, ac facilisis diam.</p>
+          </div>
+          <div class="promo-offer__right">
+            <h3>Offer Of The Month</h3>
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              imperdiet et leo in vulputate.
+            </p>
+            <button class="btn" type="button">Get Offer Today</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW PRODUCTS -->
+      <section class="section container new-products">
+        <h2>New Products Arrival</h2>
+        <p class="new-products__subtitle">
+          Duis vestibulum elit vel neque pharetra
+        </p>
+        <div class="products" id="new-products"></div>
+      </section>
+
+      <!-- GRATEFUL CUSTOMERS -->
+      <section class="section container grateful-customers">
+        <h2>Our Grateful Customers</h2>
+        <p class="grateful-customers__subtitle">
+          Duis vestibulum elit vel neque pharetra
+        </p>
+
+        <div class="grateful-customers__grid">
+          <article class="customer-card">
+            <img src="../src/img/custom1.png" alt="Ethan Wade" />
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              imperdiet et leo in vulputate.
+            </p>
+            <h3>Ethan Wade, New York</h3>
+          </article>
+
+          <article class="customer-card">
+            <img src="../src/img/custom2.png" alt="Jane Reyes" />
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              imperdiet et leo in vulputate.
+            </p>
+            <h3>Jane Reyes, California</h3>
+          </article>
+
+          <article class="customer-card">
+            <img src="../src/img/custom3.png" alt="Erica Banks" />
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              imperdiet et leo in vulputate.
+            </p>
+            <h3>Erica Banks, Miami</h3>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__benefits-wrap">
+        <div class="footer__benefits-inner">
+          <div class="footer__box">
+            <h3>Our Benefits</h3>
+          </div>
+
+          <div class="footer__benefits">
+            <div class="footer__benefit-item">
+              <img src="../src/img/foot4.png" alt="Benefit icon 1" />
+              <p>Nisl nisl sodales eget donec quis, volutpat orci.</p>
+            </div>
+
+            <div class="footer__benefit-item">
+              <img src="../src/img/foot3.png" alt="Benefit icon 2" />
+              <p>Dolor eu varius. Morbi fermentum velit nisl.</p>
+            </div>
+
+            <div class="footer__benefit-item">
+              <img src="../src/img/foot2.png" alt="Benefit icon 3" />
+              <p>Malesuada fames ac ante ipsum primis in faucibus.</p>
+            </div>
+
+            <div class="footer__benefit-item">
+              <img src="../src/img/foot1.png" alt="Benefit icon 4" />
+              <p>Nisl sodales eget donec quis, volutpat orci.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__content container">
+        <div class="footer__main">
+          <div class="footer__column footer__column--info">
+            <div class="footer__columns">
+              <div class="footer__column">
+                <h4><a href="html/about.html">About Us</a></h4>
+                <a href="#">Organisation</a>
+                <a href="#">Partners</a>
+                <a href="#">Clients</a>
+              </div>
+
+              <div class="footer__column">
+                <h4>Interesting Links</h4>
+                <a href="#">Photo Gallery</a>
+                <a href="#">Our Team</a>
+                <a href="#">Socials</a>
+              </div>
+
+              <div class="footer__column">
+                <h4>Achievements</h4>
+                <a href="#">Winning Awards</a>
+                <a href="#">Press</a>
+                <a href="#">Our Amazing Clients</a>
+              </div>
+            </div>
+
+            <div class="footer__shipping">
+              <h4>Shipping Information</h4>
+              <p>
+                Nulla eleifend pulvinar purus, molestie euismod odio imperdiet
+                ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec
+                interdum, lectus in convallis pulvinar, enim elit porta sapien,
+                vel finibus erat felis sed neque. Etiam aliquet neque sagittis
+                erat tincidunt aliquam.
+              </p>
+            </div>
+          </div>
+
+          <div class="footer__column footer__column--contact">
+            <h4><a href="html/contact.html">Contact Us</a></h4>
+            <p>
+              Bendum dolor eu varius. Morbi fermentum velitsodales egetonec,
+              volutpat orci. Sed ipsum felis, tristique egestas et, convallis ac
+              velitn consequat nec luctus.
+            </p>
+
+            <div class="footer__contact-grid">
+              <div class="footer__contact-item">
+                <img src="../src/img/icon.png" alt="Phone" />
+                <span>Phone: (+63) 236 6322</span>
+              </div>
+              <div class="footer__contact-item">
+                <img src="../src/img/icon2.png" alt="Email" />
+                <span>public@news.com</span>
+              </div>
+              <div class="footer__contact-item">
+                <img src="../src/img/icon3.png" alt="Working hours" />
+                <span>Mon-Fri:10am-6pm<br />Sat-Sun:10am-6pm</span>
+              </div>
+              <div class="footer__contact-item">
+                <img src="../src/img/icon4.png" alt="Location" />
+                <span>639 Jade Valley,<br />Washington Dc</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer__copyright">© Copyright 2025</p>
+      </div>
+    </footer>
+
+    <script type="module" src="../dist/js/home.js"></script>
+  </body>
+</html>

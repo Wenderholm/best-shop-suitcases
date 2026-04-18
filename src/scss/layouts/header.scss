@@ -1,0 +1,223 @@
+.header {
+  font-family: "montserrat", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 22px 20px 18px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+
+  img {
+    width: 20px;
+    border-radius: 6px;
+  }
+
+  &__menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #dadada;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    span {
+      width: 18px;
+      height: 2px;
+      background: #2f2f2f;
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+  }
+
+  .containerUpper {
+    display: flex;
+    align-items: center;
+    width: 1300px;
+    max-width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 14px;
+
+    & .socialMedia {
+      display: flex;
+      & a {
+        margin-right: 10px;
+        color: $text;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 4px;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+    & .loginIcon {
+      display: flex;
+      align-items: center;
+      & .userIcon,
+      & .cartIcon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        & img {
+          width: 100%;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+
+  .logo {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: $primary;
+    text-decoration: none;
+    & p {
+      color: #b92770;
+      margin-left: 13px;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    & img {
+      width: 32px;
+      background-color: #b92770;
+      border-radius: 6px;
+    }
+  }
+  .containerDown {
+    margin-top: 29px;
+    width: 1300px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & .nav {
+      display: flex;
+      gap: 27px;
+      & a {
+        text-decoration: none;
+        font-size: 18px;
+        color: $text;
+        font-weight: bold;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: $desktop) {
+  .header {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    .containerUpper {
+      gap: 16px;
+    }
+
+    .containerDown {
+      margin-top: 18px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .header {
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+
+    &__menu-toggle {
+      display: inline-flex;
+    }
+
+    &.is-menu-open {
+      .header__menu-toggle {
+        span:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+
+        span:nth-child(2) {
+          opacity: 0;
+        }
+
+        span:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+      }
+
+      .nav {
+        display: flex;
+      }
+    }
+
+    .containerUpper {
+      flex-wrap: wrap;
+      padding-bottom: 12px;
+
+      .socialMedia {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .logo {
+        flex: 1;
+      }
+
+      .loginIcon {
+        gap: 10px;
+      }
+    }
+
+    .containerDown {
+      width: 100%;
+      margin-top: 12px;
+      position: relative;
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        padding: 10px 0;
+        border: 1px solid #ededed;
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+        background: #fff;
+
+        a {
+          display: block;
+          width: 100%;
+          padding: 14px 18px;
+          box-sizing: border-box;
+          border-bottom: 1px solid #f1f1f1;
+        }
+
+        a:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

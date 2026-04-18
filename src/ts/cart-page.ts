@@ -160,7 +160,7 @@ function initCartPage(): void {
 
   itemsContainer.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    const actionTrigger = target.closest("[data-action]") as HTMLElement | null;
+    const actionTrigger = target.closest<HTMLElement>("[data-action]");
 
     if (!actionTrigger) {
       return;

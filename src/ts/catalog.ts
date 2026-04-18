@@ -288,7 +288,7 @@ function toggleFiltersVisibility(): void {
 function attachEvents(): void {
   productsContainer?.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    const card = target.closest("[data-product-id]") as HTMLElement | null;
+    const card = target.closest<HTMLElement>("[data-product-id]");
 
     if (!card) {
       return;

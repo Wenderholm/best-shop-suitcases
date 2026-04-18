@@ -23,9 +23,7 @@ const productsContainer = document.getElementById("catalog-products");
 const bestRatedContainer = document.getElementById("best-rated-products");
 const paginationContainer = document.getElementById("catalog-pagination");
 const resultCount = document.getElementById("catalog-result-count");
-const filtersSection = document.querySelector(
-  ".catalog-filters",
-) as HTMLElement | null;
+const filtersSection = document.querySelector<HTMLElement>(".catalog-filters");
 const searchInput = document.getElementById(
   "catalog-search",
 ) as HTMLInputElement | null;
@@ -314,7 +312,7 @@ function attachEvents(): void {
 
   bestRatedContainer?.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    const card = target.closest(".best-set-item") as HTMLElement | null;
+    const card = target.closest<HTMLElement>(".best-set-item");
     const title = card?.querySelector("h4")?.textContent;
     const product = allProducts.find((item) => item.name === title);
 
@@ -340,13 +338,11 @@ function attachEvents(): void {
 
   paginationContainer?.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    const pageButton = target.closest("[data-page]") as HTMLElement | null;
-    const nextButton = target.closest(
-      "[data-action='next']",
-    ) as HTMLElement | null;
-    const previousButton = target.closest(
+    const pageButton = target.closest<HTMLElement>("[data-page]");
+    const nextButton = target.closest<HTMLElement>("[data-action='next']");
+    const previousButton = target.closest<HTMLElement>(
       "[data-action='previous']",
-    ) as HTMLElement | null;
+    );
 
     if (pageButton) {
       const nextPage = Number(pageButton.dataset.page);

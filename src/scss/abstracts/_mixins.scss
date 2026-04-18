@@ -1,0 +1,12 @@
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin responsive-container($max-width, $padding: 20px) {
+	width: $max-width;
+	max-width: calc(100% - (2 * $padding));
+	margin-left: auto;
+	margin-right: auto;
+}

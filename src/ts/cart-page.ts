@@ -123,9 +123,13 @@ function getItemIdentity(element: HTMLElement): {
   size: string;
   color: string;
 } | null {
-  const row = element.closest(".cart-item") as HTMLElement | null;
+  const row = element.closest(".cart-item");
 
-  if (!row?.dataset.id || !row.dataset.size || !row.dataset.color) {
+  if (!(row instanceof HTMLElement)) {
+    return null;
+  }
+
+  if (!row.dataset.id || !row.dataset.size || !row.dataset.color) {
     return null;
   }
 
@@ -140,11 +144,14 @@ function initCartPage(): void {
   const root = document.getElementById("cart-page-root");
   const itemsContainer = document.getElementById("cart-items");
   const clearCartButton = document.getElementById("clear-cart");
-  const checkoutButton = document.getElementById(
-    "cart-checkout",
-  ) as HTMLButtonElement | null;
+  const checkoutButton = document.getElementById("cart-checkout");
 
-  if (!root || !itemsContainer || !clearCartButton || !checkoutButton) {
+  if (
+    !root ||
+    !itemsContainer ||
+    !clearCartButton ||
+    !(checkoutButton instanceof HTMLButtonElement)
+  ) {
     return;
   }
 

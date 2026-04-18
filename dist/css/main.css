@@ -58,23 +58,32 @@ select {
   overflow: hidden;
 }
 
-.login-modal {
+dialog.login-modal {
   position: fixed;
   inset: 0;
   display: none;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: none;
+  background: transparent;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
-.login-modal.is-open {
+dialog.login-modal::backdrop {
+  background: rgba(0, 0, 0, 0.35);
+}
+dialog.login-modal.is-open {
   display: flex;
 }
-.login-modal__overlay {
+dialog.login-modal__overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
 }
-.login-modal__dialog {
+dialog.login-modal__dialog {
   position: relative;
   width: min(480px, 100% - 32px);
   padding: 36px 40px 40px;
@@ -82,7 +91,7 @@ select {
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
   z-index: 1;
 }
-.login-modal__close {
+dialog.login-modal__close {
   position: absolute;
   top: 12px;
   right: 14px;
@@ -93,7 +102,7 @@ select {
   line-height: 1;
   cursor: pointer;
 }
-.login-modal h2 {
+dialog.login-modal h2 {
   margin: 0 0 26px;
   font-size: 28px;
   font-weight: 700;
@@ -1366,6 +1375,7 @@ main {
   cursor: pointer;
 }
 .catalog-pagination__nav {
+  min-width: 72px;
   border: 2px solid #b92770;
   border-radius: 4px;
   padding: 14px 38px 13px 20px;
@@ -1392,9 +1402,6 @@ main {
   border-color: #b92770;
   background: #b92770;
   color: #fff;
-}
-.catalog-pagination__nav {
-  min-width: 72px;
 }
 .catalog-pagination__arrow {
   display: inline-block;

@@ -1,9 +1,9 @@
 export function initHeaderMenu(): void {
-  const header = document.querySelector(".header") as HTMLElement | null;
-  const toggleButton = header?.querySelector(
+  const header = document.querySelector<HTMLElement>(".header");
+  const toggleButton = header?.querySelector<HTMLButtonElement>(
     ".header__menu-toggle",
-  ) as HTMLButtonElement | null;
-  const nav = header?.querySelector(".nav") as HTMLElement | null;
+  );
+  const nav = header?.querySelector<HTMLElement>(".nav");
 
   if (!header || !toggleButton || !nav) {
     return;

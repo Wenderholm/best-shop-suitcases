@@ -315,6 +315,7 @@
     cursor: pointer;
   }
   &__nav {
+    min-width: 72px;
     border: 2px solid #b92770;
     border-radius: 4px;
     padding: 14px 38px 13px 20px;
@@ -344,10 +345,6 @@
     border-color: #b92770;
     background: #b92770;
     color: #fff;
-  }
-
-  &__nav {
-    min-width: 72px;
   }
 
   &__arrow {

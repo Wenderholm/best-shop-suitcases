@@ -102,7 +102,7 @@ function attachProductCardEvents(
 
   container.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    const card = target.closest("[data-product-id]") as HTMLElement | null;
+    const card = target.closest<HTMLElement>("[data-product-id]");
 
     if (!card) {
       return;
@@ -115,7 +115,7 @@ function attachProductCardEvents(
     }
 
     if (target.closest("button")) {
-      const action = (target.closest("button") as HTMLElement).dataset
+      const action = target.closest<HTMLElement>("button")?.dataset
         .buttonAction;
 
       if (action === "view-product") {

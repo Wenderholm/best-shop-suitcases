@@ -97,19 +97,25 @@ function getOptionValues(value) {
 }
 function getProductVariants(products) {
     return products.reduce((variants, product) => {
-        const sizes = getOptionValues(product.size);
-        const colors = getOptionValues(product.color);
-        const categories = getOptionValues(product.category);
-        sizes.forEach((size) => {
-            colors.forEach((color) => {
-                categories.forEach((category) => {
-                    variants.push({
-                        product,
-                        size,
-                        color,
-                        category,
-                    });
-                });
+        return variants.concat(createProductVariants(product));
+    }, []);
+}
+function createProductVariants(product) {
+    const sizes = getOptionValues(product.size);
+    const colors = getOptionValues(product.color);
+    const categories = getOptionValues(product.category);
+    return sizes.reduce((variants, size) => {
+        return variants.concat(createSizeVariants(product, size, colors, categories));
+    }, []);
+}
+function createSizeVariants(product, size, colors, categories) {
+    return colors.reduce((variants, color) => {
+        categories.forEach((category) => {
+            variants.push({
+                product,
+                size,
+                color,
+                category,
             });
         });
         return variants;

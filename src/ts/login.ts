@@ -11,14 +11,9 @@ type LoginPayload = {
 
 const LOGIN_DATA_PATH = "/src/assets/data.json";
 const LOGIN_MODAL_MARKUP = `
-  <div class="login-modal" id="login-modal" aria-hidden="true">
+  <dialog class="login-modal" id="login-modal" aria-labelledby="login-modal-title">
     <div class="login-modal__overlay"></div>
-    <div
-      class="login-modal__dialog"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="login-modal-title"
-    >
+    <div class="login-modal__dialog">
       <button
         class="login-modal__close"
         type="button"
@@ -64,22 +59,22 @@ const LOGIN_MODAL_MARKUP = `
         <button class="btn login-form__submit" type="submit">LOG IN</button>
       </form>
     </div>
-  </div>
+  </dialog>
 `;
 
-async function ensureLoginModal(): Promise<HTMLElement | null> {
+async function ensureLoginModal(): Promise<HTMLDialogElement | null> {
   const existingModal = document.getElementById("login-modal");
 
-  if (existingModal) {
+  if (existingModal instanceof HTMLDialogElement) {
     return existingModal;
   }
 
   const wrapper = document.createElement("div");
   wrapper.innerHTML = LOGIN_MODAL_MARKUP;
 
-  const modal = wrapper.firstElementChild as HTMLElement | null;
+  const modal = wrapper.firstElementChild;
 
-  if (!modal) {
+  if (!(modal instanceof HTMLDialogElement)) {
     return null;
   }
 
@@ -151,6 +146,10 @@ export async function initLoginModal(): Promise<void> {
   let usersPromise: Promise<LoginUser[]> | null = null;
 
   const openModal = (): void => {
+    if (!modal.open) {
+      modal.showModal();
+    }
+
     modal.classList.add("is-open");
     document.body.classList.add("modal-open");
     resetMessage(feedback);
@@ -159,6 +158,9 @@ export async function initLoginModal(): Promise<void> {
 
   const closeModal = (): void => {
     modal.classList.remove("is-open");
+    if (modal.open) {
+      modal.close();
+    }
     document.body.classList.remove("modal-open");
     form.reset();
     passwordInput.type = "password";

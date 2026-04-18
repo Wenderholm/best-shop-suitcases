@@ -57,13 +57,13 @@ export function getCartCount(): number {
 }
 
 export function updateCartCounter(): void {
-  const cartIcon = document.querySelector(".cartIcon") as HTMLElement | null;
+  const cartIcon = document.querySelector<HTMLElement>(".cartIcon");
 
   if (!cartIcon) {
     return;
   }
 
-  let badge = cartIcon.querySelector(".cart-count") as HTMLElement | null;
+  let badge = cartIcon.querySelector<HTMLElement>(".cart-count");
   const count = getCartCount();
 
   if (count <= 0) {

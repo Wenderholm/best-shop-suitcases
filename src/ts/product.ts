@@ -159,20 +159,33 @@ function getOptionValues(value: string): string[] {
 
 function getProductVariants(products: Product[]): ProductVariant[] {
   return products.reduce<ProductVariant[]>((variants, product) => {
-    const sizes = getOptionValues(product.size);
-    const colors = getOptionValues(product.color);
-    const categories = getOptionValues(product.category);
+    return variants.concat(createProductVariants(product));
+  }, []);
+}
 
-    sizes.forEach((size) => {
-      colors.forEach((color) => {
-        categories.forEach((category) => {
-          variants.push({
-            product,
-            size,
-            color,
-            category,
-          });
-        });
+function createProductVariants(product: Product): ProductVariant[] {
+  const sizes = getOptionValues(product.size);
+  const colors = getOptionValues(product.color);
+  const categories = getOptionValues(product.category);
+
+  return sizes.reduce<ProductVariant[]>((variants, size) => {
+    return variants.concat(createSizeVariants(product, size, colors, categories));
+  }, []);
+}
+
+function createSizeVariants(
+  product: Product,
+  size: string,
+  colors: string[],
+  categories: string[],
+): ProductVariant[] {
+  return colors.reduce<ProductVariant[]>((variants, color) => {
+    categories.forEach((category) => {
+      variants.push({
+        product,
+        size,
+        color,
+        category,
       });
     });
 
@@ -515,7 +528,7 @@ function attachEvents(): void {
 
   reviewRatingStars?.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    const button = target.closest("[data-rating]") as HTMLElement | null;
+    const button = target.closest<HTMLElement>("[data-rating]");
     const rating = Number(button?.dataset.rating);
 
     if (!Number.isNaN(rating) && rating > 0) {
@@ -560,7 +573,7 @@ function attachEvents(): void {
 
   relatedProducts?.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    const card = target.closest("[data-related-id]") as HTMLElement | null;
+    const card = target.closest<HTMLElement>("[data-related-id]");
     const product = allProducts.find(
       (item) => item.id === card?.dataset.relatedId,
     );

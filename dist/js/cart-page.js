@@ -89,7 +89,10 @@ function renderCartPage() {
 }
 function getItemIdentity(element) {
     const row = element.closest(".cart-item");
-    if (!(row === null || row === void 0 ? void 0 : row.dataset.id) || !row.dataset.size || !row.dataset.color) {
+    if (!(row instanceof HTMLElement)) {
+        return null;
+    }
+    if (!row.dataset.id || !row.dataset.size || !row.dataset.color) {
         return null;
     }
     return {
@@ -103,7 +106,10 @@ function initCartPage() {
     const itemsContainer = document.getElementById("cart-items");
     const clearCartButton = document.getElementById("clear-cart");
     const checkoutButton = document.getElementById("cart-checkout");
-    if (!root || !itemsContainer || !clearCartButton || !checkoutButton) {
+    if (!root ||
+        !itemsContainer ||
+        !clearCartButton ||
+        !(checkoutButton instanceof HTMLButtonElement)) {
         return;
     }
     renderCartPage();

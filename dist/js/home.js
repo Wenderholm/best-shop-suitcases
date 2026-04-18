@@ -65,6 +65,7 @@ function attachProductCardEvents(container, products) {
         return;
     }
     container.addEventListener("click", (event) => {
+        var _a;
         const target = event.target;
         const card = target.closest("[data-product-id]");
         if (!card) {
@@ -75,8 +76,7 @@ function attachProductCardEvents(container, products) {
             return;
         }
         if (target.closest("button")) {
-            const action = target.closest("button").dataset
-                .buttonAction;
+            const action = (_a = target.closest("button")) === null || _a === void 0 ? void 0 : _a.dataset.buttonAction;
             if (action === "view-product") {
                 navigateToProduct(product.id);
                 return;

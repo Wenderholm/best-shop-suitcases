@@ -1,4 +1,4 @@
-author: Przemysław Wenderholm
+# author: Przemysław Wenderholm
 
 # Suitcase E-Shop
 

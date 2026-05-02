@@ -1,3 +1,5 @@
+author: Przemysław Wenderholm
+
 # Suitcase E-Shop
 
 Multi-page e-commerce website built with HTML, SCSS, and TypeScript. The project includes a homepage, catalog, product details page, about page, contact page, and cart page. Product data is loaded from local JSON and the compiled assets are generated into the `dist` directory.
